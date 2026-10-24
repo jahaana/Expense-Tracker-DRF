@@ -50,19 +50,20 @@ Content-Type: application/json
 DELETE http://127.0.0.1:8000/expenses/1/
 Authorization: Basic YOUR_BASE64_TOKEN
 
-# API call for list all expenses
+# API call for filter by category and payment method
 ###
-GET http://127.0.0.1:8000/expenses/
+GET http://127.0.0.1:8000/expenses/?category=food
 Authorization: Basic YOUR_BASE64_TOKEN
 
-# API call for create expense as user2
 ###
-POST http://127.0.0.1:8000/expenses/
+GET http://127.0.0.1:8000/expenses/?payment=UPI
 Authorization: Basic YOUR_BASE64_TOKEN
-Content-Type: application/json
-{
-    "title": "Bus Ticket",
-    "amount": "50.00",
-    "category": "fuel",
-    "payment": "UPI"
-}
+
+# API call for search by expense title
+###
+GET http://127.0.0.1:8000/expenses/?search=lunch
+Authorization: Basic base64-user-password
+
+API call for order by created date
+###
+GET http://127.0.0.1:8000/expenses/?ordering=created_at

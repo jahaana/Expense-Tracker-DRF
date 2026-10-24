@@ -1,6 +1,18 @@
+# Python cache files
 __pycache__/
 *.py[cod]
+# Virtual environments
 expense_env/
+venv/
+env/
+*_env/
+.venv/
+# Django database
 db.sqlite3
+# Environment variables and secrets
 .env
+.env.*
+# VS Code settings
 .vscode/
+# Log files
+*.log
