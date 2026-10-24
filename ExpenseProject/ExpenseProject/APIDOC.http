@@ -1,12 +1,12 @@
 # API call for list all expenses
 ###
 GET http://127.0.0.1:8000/expenses/
-Authorization: Basic YOUR_BASE64_TOKEN
+Authorization: Basic base64-token
 
 # API call for create expense
 ###
 POST http://127.0.0.1:8000/expenses/
-Authorization: Basic YOUR_BASE64_TOKEN
+Authorization: Basic base64-token
 Content-Type: application/json
 
 {
@@ -19,12 +19,12 @@ Content-Type: application/json
 # API call for view expense details
 ###
 GET http://127.0.0.1:8000/expenses/1/
-Authorization: Basic YOUR_BASE64_TOKEN
+Authorization: Basic base64-token
 
 # API call for update expense data
 ###
-PUT http://127.0.0.1:8000/expenses/1/
-Authorization: Basic YOUR_BASE64_TOKEN
+PUT http://127.0.0.1:8000/expenses/3/
+Authorization: Basic base64-token
 Content-Type: application/json
 
 {
@@ -36,34 +36,44 @@ Content-Type: application/json
 
 # API call for partial updation of expense data
 ###
-PATCH http://127.0.0.1:8000/expenses/1/
-Authorization: Basic YOUR_BASE64_TOKEN
+PATCH http://127.0.0.1:8000/expenses/3/
+Authorization: Basic base64-token
 Content-Type: application/json
 
 {
-    "amount": "200.00"
+    "amount": "180.00"
 }
 
 
 # API call for delete expense
 ###
-DELETE http://127.0.0.1:8000/expenses/1/
-Authorization: Basic YOUR_BASE64_TOKEN
+DELETE http://127.0.0.1:8000/expenses/3/
+Authorization: Basic base64-token
 
 # API call for filter by category and payment method
 ###
 GET http://127.0.0.1:8000/expenses/?category=food
-Authorization: Basic YOUR_BASE64_TOKEN
-
+Authorization: Basic base64-token
 ###
-GET http://127.0.0.1:8000/expenses/?payment=UPI
-Authorization: Basic YOUR_BASE64_TOKEN
+GET http://127.0.0.1:8000/expenses/?payment=card
+Authorization: Basic base64-token
 
 # API call for search by expense title
 ###
 GET http://127.0.0.1:8000/expenses/?search=lunch
-Authorization: Basic base64-user-password
+Authorization: Basic base64-token
 
 API call for order by created date
 ###
 GET http://127.0.0.1:8000/expenses/?ordering=created_at
+Authorization: Basic base64-token
+
+# API call for order by amount
+###
+GET http://127.0.0.1:8000/expenses/?ordering=+amount
+Authorization: Basic base64-token
+
+# API call for test user data protection
+###
+GET http://127.0.0.1:8000/expenses/1/
+Authorization: Basic Seconduser_token
